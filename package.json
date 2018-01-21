@@ -1,0 +1,24 @@
+{
+  "name": "javascript_interview",
+  "version": "1.0.0",
+  "description": "My Own Heroku Website for Interview Questions",
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"    
+  },
+  "scripts": {
+    "local":"docsify serve ./docs",
+    "start": "node server.js",
+    "init":"docsify init ./docs"
+  },
+  "keywords": ["javascript", "algorithms", "2018", "interview", "pramod"],
+  "author": "Pramod",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
