@@ -13,7 +13,7 @@ for (var i = 0; i < 5; i++) {
 }
 ```
 
-### Answer
+> ANSWER
 
 The code sample shown will not display the values `0, 1, 2, 3, and 4` as might be expected; rather, it will display `5, 5, 5, 5, and 5`.
 
@@ -42,7 +42,7 @@ for (let i = 0; i < 5; i++) {
 
 ## 2. Example of a simple _constructor function_ in Javascript
 
-### Answer
+> ANSWER
 
 ```js
 function Person(first, last, age, eye) {
@@ -69,10 +69,60 @@ foo(1); //works
 baz(1); //This will throw an error :O
 ```
 
-### Answer
+> ANSWER
 
 Functions which are defined on the `Right Hand Side of the statement` cannot be invoked on the left side.
 
 - baz(1); `will throw an error`
+
+---
+
+## 4. `var` keyword always attaches to the function scope. `let` keyword always attaches to the block scope.
+
+the below function `var` keyword needs to be replaced with `let` else the value of `i` will spill outside of the `for` loop.
+
+```js
+function foo(){
+    var bar = 'bar';
+    for(var i=0;i<bar.length;i++){
+        console.log('Character in BAR: ', bar[i]);
+    }
+    console.log('Variable i is: ', i);// This will show the value of i :(
+}//end:foo
+
+foo();
+```
+
+---
+
+## 5. What is closure ?
+
+> Closure is when a function remembers it's `lexical scope` even when the function is `executed outside that lexical scope.`
+
+The following is an example of closure and is also known as `Module Pattern`.
+
+```js
+var foo = (function(){
+    var obj = {bar:"bar"};
+    return {
+        bar:function(){
+            console.log(obj.bar);
+        }
+    }
+})();
+
+foo.bar(); //bar
+```
+
+So, for a class module pattern, the following 2 points are required.
+
+- It has to be wrapped inside a `IIFE`
+- It should return one or more `inner functions`
+
+---
+
+
+
+
 
 
