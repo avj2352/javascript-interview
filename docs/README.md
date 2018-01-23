@@ -121,6 +121,34 @@ So, for a class module pattern, the following 2 points are required.
 
 ---
 
+## 6. How does `Prototype`, `__proto__` work with the constructor functions `new` and `this`.
+
+- If we want each instance of a constructor function, to have it's own `properties` and `methods`, we use the `new` and the `this` keyword.
+- If we want every isntance of a constructor function to share a common method, like (`static` methods in other prgm languages), we use the `prototype` method.
+
+```js
+// instances of User type will have THEIR OWN COPIES of firstName and lastName
+function User(firstName,lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+var pramod = new User('pramod','jingade'); //Now pramod has its OWN COPY of firstName and lastName
+
+User.prototype.emailDomain = '@gmail.com'; // This will be stored inside the __proto__ (a.k.a dunder proto)
+User.prototype.getEmailAddress = function(){ // This will be stores inside the __proto__
+    return `${this.firstName}.${this.lastName}@${this.emailDomain}`; //NOTE: prototype methods/ppties can be also accessed as this
+}
+
+pramod.getEmailAddress(); //this will return pramod.jingade@gmail.com
+```
+---
+
+# DataStructures & Algorithms
+
+---
+
+## 1. LinkedList (Singly & Doubly Linked-List)
+
 
 
 
