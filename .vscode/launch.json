@@ -8,8 +8,8 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\linkedlist.js"
+            "name": "Debug LinkedList",
+            "program": "${workspaceFolder}\\exercise\\linkedlist.js"
         }
     ]
 }
